@@ -2,9 +2,10 @@ Summary:	GIMP - brushes, gradients, palettes and patterns
 Summary(pl):	GIMP - pisaki, gradienty, palety i wype³nienia
 Name:		gimp-data-extras
 Version:	1.2.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications/Graphics
+Group(de):	X11/Applikationen/Grafik
 Group(pl):	X11/Aplikacje/Grafika
 Url:		http://www.gimp.org/
 Source0:	ftp://ftp.gimp.org/pub/gimp/v1.2/v%{version}/%{name}-%{version}.tar.bz2
@@ -32,15 +33,11 @@ i wype³nienia ró¿nych autorów.
 
 %build
 %configure  --prefix=%{_prefix}
-#./configure --prefix=%{_prefix}
-# %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 %{__make} install \
-	prefix=$RPM_BUILD_ROOT%{_prefix} \
-        DESTDIR=$RPM_BUILD_ROOT \
-        m4datadir=%{_aclocaldir}
+        DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf README
 
