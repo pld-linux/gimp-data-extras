@@ -11,8 +11,8 @@ URL:		http://www.gimp.org/
 BuildRequires:	autoconf
 BuildRequires:	gimp-devel >= %{version}
 Requires:	gimp >= %{version}
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-Buildarch:	noarch
 
 %define		_gimpdatadir	%(gimptool --gimpdatadir)
 
