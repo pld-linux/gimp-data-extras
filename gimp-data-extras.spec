@@ -1,14 +1,15 @@
 Summary:	GIMP - brushes, gradients, palettes and patterns
 Summary(pl):	GIMP - pisaki, gradienty, palety i wype³nienia
 Name:		gimp-data-extras
-Version:	1.0.0
-Release:	4
+Version:	1.1.26
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
 Group(pl):	X11/Aplikacje/Grafika
 Url:		http://www.gimp.org/
 Source0:	ftp://ftp.gimp.org/pub/gimp/0.99/latest/%{name}-%{version}.tar.bz2
-Requires:	gimp
+BuildRequires:	gimp-devel >= %{version}
+Requires:	gimp >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
@@ -30,12 +31,16 @@ i wype³nienia ró¿nych autorów.
 %setup -q
 
 %build
-./configure --prefix=%{_prefix}
-%{__make}
+%configure  --prefix=%{_prefix}
+#./configure --prefix=%{_prefix}
+# %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} prefix=$RPM_BUILD_ROOT%{_prefix} install
+%{__make} install \
+	prefix=$RPM_BUILD_ROOT%{_prefix} \
+        DESTDIR=$RPM_BUILD_ROOT \
+        m4datadir=%{_aclocaldir}
 
 gzip -9nf README
 
@@ -45,5 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644,root,root,755)
 %doc *gz
-%{_datadir}/gimp/brushes/*
-%{_datadir}/gimp/patterns/*
+%{_datadir}/gimp/1.1/brushes/*
+%{_datadir}/gimp/1.1/patterns/*
