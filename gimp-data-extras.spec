@@ -13,8 +13,6 @@ Requires:	gimp >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
-%define		_prefix		/usr/X11R6
-%define		_mandir		%{_prefix}/man
 %define		_gimpdatadir	%(gimp-config --gimpdatadir)
 
 %description
