@@ -9,7 +9,7 @@ Group(pl):	X11/Aplikacje/Grafika
 Url:		http://www.gimp.org/
 Source:		ftp://ftp.gimp.org/pub/gimp/0.99/latest/%{name}-%{version}.tar.bz2
 Requires:	gimp
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
 %description
