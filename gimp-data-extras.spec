@@ -31,7 +31,7 @@ i wype³nienia ró¿nych autorów.
 
 %build
 ./configure --prefix=%{_prefix}
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
