@@ -44,36 +44,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc *gz
 /usr/X11R6/share/gimp/brushes/*
 /usr/X11R6/share/gimp/patterns/*
-
-%changelog
-* Wed Mar 31 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.0-4]
-- install prefix changed to /usr/X11R6.
-
-* Tue Mar 16 1999 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.0-3]
-- added gzipping %doc.
-
-* Wed Sep 15 1998 Wojtek 奸usarczyk <wojtek@shadow.eu.org>
-  [1.0.0-2]
-- build against Tornado,
-- pixed pl translation.
-
-* Mon Aug  10 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-  [1.0.0-1]
-- added pl translation.
-
-* Wed May  6 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- %%{version} macro instead %%{PACKAGE_VERSION},
-- added using %%{name} macro in Buildroot and Source field,
-- added -q %setup parameter.
-
-* Wed Apr 28 1998 Tomasz K這czko <kloczek@rudy.mif.pg.gda.pl>
-- Buildroot changed to /tmp/gimp-data-extras-%%{PACKAGE_VERSION}-root,
-- changed version to 0.99a,
-- package is now builded as noarch and from bziped2 source tar,
-- added %defattr macro in %files (allows building package from
-  non-root account); require rpm >= 2.4.99.
-
-* Mon Mar  2 1998 ??? <root@pingviini.kortex.jyu.fi>
-- first not commented release.
