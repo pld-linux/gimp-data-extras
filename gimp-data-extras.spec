@@ -5,6 +5,7 @@ Version:	1.0.0
 Release:	4
 Copyright:	GPL
 Group:		X11/Applications/Graphics
+Group(pl):	X11/Aplikacje/Grafika
 Url:		http://www.gimp.org/
 Source:		ftp://ftp.gimp.org/pub/gimp/0.99/latest/%{name}-%{version}.tar.bz2
 Requires:	gimp
