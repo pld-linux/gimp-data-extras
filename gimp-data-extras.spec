@@ -1,15 +1,16 @@
-Summary:     GIMP - brushes, gradients, palettes and patterns
-Summary(pl): GIMP - pisaki, gradienty, palety i wype³nienia
-Name:        gimp-data-extras
-Version:     1.0.0
-Release:     2
-Copyright:   GPL
-Group:       X11/Applications/Graphics
-Url:         http://www.gimp.org/
-Source:      ftp://ftp.gimp.org/pub/gimp/0.99/latest/%{name}-%{version}.tar.bz2
-Requires:    gimp
-BuildRoot:   /tmp/%{name}-%{version}-root
-BuildArchitectures: noarch
+Summary:	GIMP - brushes, gradients, palettes and patterns
+Summary(pl):	GIMP - pisaki, gradienty, palety i wype³nienia
+Name:		gimp-data-extras
+Version:	1.0.0
+Release:	4
+Copyright:	GPL
+Group:		X11/Applications/Graphics
+Url:		http://www.gimp.org/
+Source:		ftp://ftp.gimp.org/pub/gimp/0.99/latest/%{name}-%{version}.tar.bz2
+Requires:	gimp
+BuildRoot:	/tmp/%{name}-%{version}-root
+Buildarch:	noarch
+
 %description
 This is the archive of data files for the Gimp.
 
@@ -18,34 +19,44 @@ by various authors around the internet.
 
 %description -l pl
 Pakiet ten zawiera archiwum dodatkowych plików danych dla programu Gimp.
-
-Zawiera on pisaki, gradienty, palety i wype³nienia ró¿nych autorów.
+W pakiecie znajduj± siê miêdzy innymi: pisaki, gradienty, palety i wype³nienia 
+ró¿nych autorów.
 
 %prep
 %setup -q
 
 %build
-
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr/X11R6
+./configure --prefix=/usr/X11R6
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 make prefix=$RPM_BUILD_ROOT/usr/X11R6 install
 
+gzip -9nf README
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files 
-%defattr(644, root, root, 755)
-%doc README
+%defattr(644,root,root,755)
+%doc *gz
 /usr/X11R6/share/gimp/brushes/*
 /usr/X11R6/share/gimp/patterns/*
 
 %changelog
-* Mon Sep 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+* Wed Mar 31 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.0.0-4]
+- install prefix changed to /usr/X11R6.
+
+* Tue Mar 16 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.0.0-3]
+- added gzipping %doc.
+
+* Wed Sep 15 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
   [1.0.0-2]
-- prefix changed to /usr/X11R6.
+- build against Tornado,
+- pixed pl translation.
 
 * Mon Aug  10 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.0.0-1]
