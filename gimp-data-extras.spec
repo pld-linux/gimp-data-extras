@@ -2,7 +2,7 @@ Summary:     GIMP - brushes, gradients, palettes and patterns
 Summary(pl): GIMP - pisaki, gradienty, palety i wype³nienia
 Name:        gimp-data-extras
 Version:     1.0.0
-Release:     1
+Release:     2
 Copyright:   GPL
 Group:       X11/Applications/Graphics
 Url:         http://www.gimp.org/
@@ -26,12 +26,12 @@ Zawiera on pisaki, gradienty, palety i wype³nienia ró¿nych autorów.
 
 %build
 
-CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=/usr/X11R6
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-make prefix=$RPM_BUILD_ROOT/usr install
+make prefix=$RPM_BUILD_ROOT/usr/X11R6 install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -39,10 +39,14 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644, root, root, 755)
 %doc README
-/usr/share/gimp/brushes/*
-/usr/share/gimp/patterns/*
+/usr/X11R6/share/gimp/brushes/*
+/usr/X11R6/share/gimp/patterns/*
 
 %changelog
+* Mon Sep 21 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
+  [1.0.0-2]
+- prefix changed to /usr/X11R6.
+
 * Mon Aug  10 1998 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
   [1.0.0-1]
 - added pl translation.
