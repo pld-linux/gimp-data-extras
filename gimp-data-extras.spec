@@ -9,8 +9,8 @@ Source0:	ftp://ftp.gimp.org/pub/gimp/v1.2/v%{version}/%{name}-%{version}.tar.bz2
 # Source0-md5:	8c18380debbffb23bee9c8f787680b29
 URL:		http://www.gimp.org/
 BuildRequires:	autoconf
-BuildRequires:	gimp-devel >= %{version}
-Requires:	gimp >= %{version}
+BuildRequires:	gimp-devel >= 1:%{version}
+Requires:	gimp >= 1:%{version}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
