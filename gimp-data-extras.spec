@@ -14,7 +14,7 @@ Requires:	gimp >= %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Buildarch:	noarch
 
-%define		_gimpdatadir	%(gimp-config --gimpdatadir)
+%define		_gimpdatadir	%(gimptool --gimpdatadir)
 
 %description
 This is the archive of data files for the Gimp.
