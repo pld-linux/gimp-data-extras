@@ -32,7 +32,7 @@ i wype³nienia ró¿nych autorów.
 %setup -q
 
 %build
-autoconf
+%{__autoconf}
 %configure
 
 %install
