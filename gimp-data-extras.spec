@@ -1,7 +1,7 @@
 Summary:	GIMP - brushes, gradients, palettes and patterns
 Summary(pl):	GIMP - pisaki, gradienty, palety i wype³nienia
 Name:		gimp-data-extras
-Version:	1.1.31
+Version:	1.2.0
 Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
@@ -50,5 +50,5 @@ rm -rf $RPM_BUILD_ROOT
 %files 
 %defattr(644,root,root,755)
 %doc *gz
-%{_datadir}/gimp/1.1/brushes/*
-%{_datadir}/gimp/1.1/patterns/*
+%{_datadir}/gimp/1.2/brushes/*
+%{_datadir}/gimp/1.2/patterns/*
