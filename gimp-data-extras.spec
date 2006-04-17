@@ -1,37 +1,34 @@
-Summary:	GIMP - brushes, gradients, palettes and patterns
-Summary(pl):	GIMP - pisaki, gradienty, palety i wype³nienia
+Summary:	GIMP - extra brushes and patterns
+Summary(pl):	GIMP - dodatkowe pisaki i wype³nienia
 Name:		gimp-data-extras
-Version:	1.2.0
-Release:	4
+Version:	2.0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications/Graphics
-Source0:	ftp://ftp.gimp.org/pub/gimp/v1.2/v%{version}/%{name}-%{version}.tar.bz2
-# Source0-md5:	8c18380debbffb23bee9c8f787680b29
+Source0:	ftp://ftp.gimp.org/pub/gimp/extras/%{name}-%{version}.tar.bz2
+# Source0-md5:	17823c4f28ad94bdcbe0233aba3bda16
 URL:		http://www.gimp.org/
-BuildRequires:	autoconf
-BuildRequires:	gimp-devel >= 1:%{version}
-Requires:	gimp >= 1:%{version}
+BuildRequires:	gimp-devel >= 1:2.0
+Requires:	gimp >= 1:2.0
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_gimpdatadir	%(gimptool --gimpdatadir)
 
 %description
-This is the archive of data files for the Gimp.
-
-Contains the latest brushes, gradients, palettes and patterns by
-various authors around the internet.
+This is a collection of additional data files for The GIMP 2. It adds
+a couple of brushes and patterns to the set of files that are already
+shipped with the GIMP tarball.
 
 %description -l pl
-Pakiet ten zawiera archiwum dodatkowych plików danych dla programu
-Gimp. W pakiecie znajduj± siê miêdzy innymi: pisaki, gradienty, palety
-i wype³nienia ró¿nych autorów.
+Pakiet ten zawiera zbiór dodatkowych plików danych dla GIMP-a 2.
+Dodaje trochê pisaków i wype³nieñ do zbioru plików za³±czonych do
+pakietu z GIMP-em.
 
 %prep
 %setup -q
 
 %build
-%{__autoconf}
 %configure
 
 %install
@@ -45,6 +42,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc AUTHORS ChangeLog NEWS README
 %{_gimpdatadir}/brushes/*
 %{_gimpdatadir}/patterns/*
