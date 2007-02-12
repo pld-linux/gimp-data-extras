@@ -1,5 +1,5 @@
 Summary:	GIMP - extra brushes and patterns
-Summary(pl):	GIMP - dodatkowe pisaki i wype³nienia
+Summary(pl.UTF-8):   GIMP - dodatkowe pisaki i wypeÅ‚nienia
 Name:		gimp-data-extras
 Version:	2.0.1
 Release:	1
@@ -20,9 +20,9 @@ This is a collection of additional data files for The GIMP 2. It adds
 a couple of brushes and patterns to the set of files that are already
 shipped with the GIMP tarball.
 
-%description -l pl
-Pakiet ten zawiera zbiór dodatkowych plików danych dla GIMP-a 2.
-Dodaje trochê pisaków i wype³nieñ do zbioru plików za³±czonych do
+%description -l pl.UTF-8
+Pakiet ten zawiera zbiÃ³r dodatkowych plikÃ³w danych dla GIMP-a 2.
+Dodaje trochÄ™ pisakÃ³w i wypeÅ‚nieÅ„ do zbioru plikÃ³w zaÅ‚Ä…czonych do
 pakietu z GIMP-em.
 
 %prep
