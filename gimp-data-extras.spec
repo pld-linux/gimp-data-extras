@@ -1,12 +1,12 @@
 Summary:	GIMP - extra brushes and patterns
 Summary(pl.UTF-8):	GIMP - dodatkowe pisaki i wypełnienia
 Name:		gimp-data-extras
-Version:	2.0.1
+Version:	2.0.2
 Release:	1
-License:	GPL
+License:	GPL v2
 Group:		X11/Applications/Graphics
 Source0:	ftp://ftp.gimp.org/pub/gimp/extras/%{name}-%{version}.tar.bz2
-# Source0-md5:	17823c4f28ad94bdcbe0233aba3bda16
+# Source0-md5:	4acb1cdddfd332d5dd467180d1ff9737
 URL:		http://www.gimp.org/
 BuildRequires:	gimp-devel >= 1:2.0
 Requires:	gimp >= 1:2.0
